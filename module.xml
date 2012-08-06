@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<module version="0.1"> 
+    <name lang="en">Google App Module</name> 
+    <description lang="en">Google App Module helps instructors and students to create and share highly interactive course content by using various Google Apps and Data Services such as Google Docs, Youtube, Google Calendars etc from within ATutor.</description> 
+    <maintainers>
+        <maintainer> 
+            <name>Ankit Bhatnagar</name> 
+            <email>ankitbhatnagar2012@gmail.com</email> 
+        </maintainer>
+    </maintainers> 
+    <url>http://atutor.ca</url> 
+    <license>BSD</license> 
+	<release> 
+	  <version>1.0</version> 
+	  <date>2012-24-04</date> 
+	  <state>Beta</state> 
+	  <notes></notes> 
+	</release> 
+</module>
