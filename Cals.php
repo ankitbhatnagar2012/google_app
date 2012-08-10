@@ -45,7 +45,7 @@ $you = $my_string[3];
 	<fieldset class="group_form">
             <legend class="group_form">Google Calendars</legend>
             <center>
-                <a href="mods/google_app/calendar.php">Access Google Calendars</a><br />
+                <a href="mods/google_app/calendar.php?abc=xyz"><?php echo _AT('access_calendars'); ?></a><br />
             </center>
 	</fieldset>	
 </div>

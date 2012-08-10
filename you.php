@@ -50,7 +50,7 @@ $you = $my_string[3];
             <iframe src="" name="iframe_target" frameborder="0" width="100%" height="500px"></iframe>          
             -->
             <center>
-                <a href="mods/google_app/you_index.php">Access Youtube</a>
+                <a href="mods/google_app/you_index.php"><?php echo _AT('access_youtube') ?></a>
             </center>
             
 	</fieldset>	

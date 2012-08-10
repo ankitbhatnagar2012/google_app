@@ -1,8 +1,15 @@
 <?php
-require_once 'src/apiClient.php';
-require_once 'src/contrib/apiCalendarService.php';
+// error_reporting(E_ALL);
+// ini_set('display_errors', '1');
+// $_user_location	= 'users';
+// define('AT_INCLUDE_PATH', '../../include/');
+// require(AT_INCLUDE_PATH.'vitals.inc.php');
+// $_custom_css = $_base_path . 'mods/google_app/module.css'; // use a custom stylesheet
+// require (AT_INCLUDE_PATH.'header.inc.php');
+require_once('src/apiClient.php');
+require_once('src/contrib/apiCalendarService.php');
+//echo $_GET['abc'];
 session_start();
-
 $client = new apiClient();
 $client->setApplicationName("Google App Module");
 
@@ -67,7 +74,9 @@ Enter details of the event : <br />
     <center>Event created at :&nbsp;
     <a href="<?php echo $createdEvent["htmlLink"] ?>"><?php echo $createdEvent["summary"] ?></a><br /><br />
     To embed this calendar-event in your course content, add the following link : <br /><br />
-    <?php echo $createdEvent["htmlLink"] ?>
+    <?php echo $createdEvent["htmlLink"] ?><br />
+    <?php echo $_config['dummy'] ?>
+
     </center>
     <br /><a href="Cals.php">Go Back</a>
 
@@ -80,10 +89,9 @@ $_SESSION['token'] = $client->getAccessToken();
 }
     else {
         $authUrl = $client->createAuthUrl();
-        print "<a class='login' href='$authUrl'>Connect Me!</a>";
+        print "<a class='login' href='$authUrl'>Create a Google Calendar Event</a>";
 }
 ?>
-<?php require (AT_INCLUDE_PATH.'footer.inc.php'); ?>
 
   
   

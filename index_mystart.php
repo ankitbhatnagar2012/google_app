@@ -49,7 +49,8 @@ $you = $my_string[3];
 	<fieldset class="group_form">
             <legend class="group_form">Google App Module</legend>
             <center>
-               The Google App Addon module helps you create and share interactive content from within your ATutor course.
+		
+               The Google App Addon module helps you create and share interactive content from within your ATutor course. <?php echo $_config['dummy']; ?>
                
                <li style="padding-bottom: 20px;"><a href="documentation/index_list.php?lang=<?php echo $_SESSION['lang']; ?>" onclick="ATutor.poptastic('<?php echo AT_BASE_HREF; ?>documentation/index_list.php?lang=<?php echo $_SESSION['lang']; ?>'); return false;" target="_new"><?php echo _AT('atutor_handbook');?></a></li>
 
