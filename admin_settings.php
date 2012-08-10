@@ -9,47 +9,44 @@ $_custom_css = $_base_path . 'mods/google_app/module.css';
 require (AT_INCLUDE_PATH.'header.inc.php');
 
     // check _POST vars
-    echo $_POST['client_id'];
-    echo $_POST['client_secret'];
-    echo $_POST['redirect_uri'];
-    echo $_POST['developer_key'];
-
+    $client_id = addslashes($_POST['client_id']);
+    $client_secret = addslashes($_POST['client_secret']);
+    $redirect_uri = addslashes($_POST['redirect_uri']);
+    $developer_key = addslashes($_POST['developer_key']);
 
     // Calendar settings
-    $query = "REPLACE INTO AT_config VALUES ('google_app_client_id',$_POST['client_id'])";
-    mysql_query($query, $db);
-    /*
-    $query = "DELETE FROM AT_calendar_settings WHERE idx=1";
-    $result = mysql_query($query);
-    $query = "INSERT INTO AT_calendar_settings VALUES ('1', 
-		$_POST['client_id'],
-		$_POST['client_secret'],
-		$_POST['redirect_uri'],
-		$_POST['developer_key'])";
-    $result = mysql_query($query);
+    $query = "DELETE FROM ".TABLE_PREFIX."calendar_settings WHERE idx=1";
+    $result = mysql_query($query, $db);
     if(!$result){            
-            die("Could not execute query successfully");
+            $success = FALSE;
         }
         else{
             $success = TRUE; 
         }
-    */
-
+    $query = "INSERT INTO ".TABLE_PREFIX."calendar_settings VALUES (1,'$client_id','$client_secret','$redirect_uri','$developer_key')";
+    $result = mysql_query($query, $db);
+    if(!$result){            
+            $success = FALSE;
+        }
+        else{
+            $success = TRUE; 
+        }
+    
     // Module settings
     if(isset($_POST['doc'])){
-		$doc = $_POST['doc'];
+		$doc = addslashes($_POST['doc']);
     } else {
 		$doc = 0;
 	}
     
     if(isset($_POST['cal'])){
-		$cal = $_POST['cal'];
+		$cal = addslashes($_POST['cal']);
     } else {
 		$cal = 0;
 	}
 
     if(isset($_POST['you'])){
-		$you = $_POST['you'];
+		$you = addslashes($_POST['you']);
     } else {
 		$you = 0;
 	}    
@@ -57,11 +54,11 @@ require (AT_INCLUDE_PATH.'header.inc.php');
     $flag = "1". $doc . $cal. $you;
     
     $query = "SELECT * FROM ".TABLE_PREFIX."my_admin_settings";
-    $result = mysql_query($query);
+    $result = mysql_query($query, $db);
     $row = mysql_fetch_array($result) ;
     if(!$row){
 	$query = "INSERT INTO ".TABLE_PREFIX."my_admin_settings(idx, flags) VALUES ('1', $flag)";
-  	$result = mysql_query($query);
+  	$result = mysql_query($query, $db);
         if(!$result){            
             $success = FALSE;
         }
@@ -70,9 +67,9 @@ require (AT_INCLUDE_PATH.'header.inc.php');
         }
     } else {
 	$query = "DELETE FROM ".TABLE_PREFIX."my_admin_settings WHERE idx='1'";
-  	$result = mysql_query($query);	
+  	$result = mysql_query($query, $db);	
         $query = "INSERT INTO ".TABLE_PREFIX."my_admin_settings(idx, flags) VALUES ('1', $flag)";
-  	$result = mysql_query($query);
+  	$result = mysql_query($query, $db);
         if(!$result){            
             $success = FALSE;
         }

@@ -1,22 +1,14 @@
 <?php
-// error_reporting(E_ALL);
-// ini_set('display_errors', '1');
-// $_user_location	= 'users';
-// define('AT_INCLUDE_PATH', '../../include/');
-// require(AT_INCLUDE_PATH.'vitals.inc.php');
-// $_custom_css = $_base_path . 'mods/google_app/module.css'; // use a custom stylesheet
-// require (AT_INCLUDE_PATH.'header.inc.php');
 require_once('src/apiClient.php');
 require_once('src/contrib/apiCalendarService.php');
-//echo $_GET['abc'];
 session_start();
 $client = new apiClient();
 $client->setApplicationName("Google App Module");
 
-$client->setClientId('555975419430.apps.googleusercontent.com');
-$client->setClientSecret('K2nH9SB_8LiaSJpJRkEIKiYd');
-$client->setRedirectUri('http://localhost/atutor/ATutor/mods/google_app/calendar.php');
-$client->setDeveloperKey('AI39si7MpDpXAQb6cBshuZjZ6p-n4oTcmfxO0_Mfy_zkGuzY88BSeYb8AwgRWtXBvolLjWZKu6pMK3vboJR4EDYTSlUhw8Yknw');
+$client->setClientId($_GET['a']);
+$client->setClientSecret($_GET['b']);
+$client->setRedirectUri($_GET['c']);
+$client->setDeveloperKey($_GET['d']);
 
 $service = new apiCalendarService($client);
 

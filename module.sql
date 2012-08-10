@@ -36,19 +36,14 @@ INSERT INTO `language_text` VALUES ('en', '_module','change_calendar_settings_ms
 
 
 #Configuration Settings :
-#Google App Module - Default
+#Google App Module
 INSERT INTO `my_admin_settings` VALUES (1,'1111');
-#Google Calendars - 
+#Google Calendars 
 INSERT INTO `calendar_settings` VALUES (1,
   '555975419430.apps.googleusercontent.com',
     'K2nH9SB_8LiaSJpJRkEIKiYd',
       'http://localhost/atutor/ATutor/mods/google_app/calendar.php',
 	'AI39si7MpDpXAQb6cBshuZjZ6p-n4oTcmfxO0_Mfy_zkGuzY88BSeYb8AwgRWtXBvolLjWZKu6pMK3vboJR4EDYTSlUhw8Yknw');
-# Google Calendars - using _config table :
-INSERT INTO `config` VALUES ('google_app_client_id','555975419430.apps.googleusercontent.com');
-INSERT INTO `config` VALUES ('google_app_client_secret','K2nH9SB_8LiaSJpJRkEIKiYd');
-INSERT INTO `config` VALUES ('google_app_redirect_uri','http://localhost/atutor/ATutor/mods/google_app/calendar.php');
-INSERT INTO `config` VALUES ('google_app_developer_key','AI39si7MpDpXAQb6cBshuZjZ6p-n4oTcmfxO0_Mfy_zkGuzY88BSeYb8AwgRWtXBvolLjWZKu6pMK3vboJR4EDYTSlUhw8Yknw');
 
 # Execution messages
 INSERT INTO `language_text` VALUES ('en', '_msgs','AT_FEEDBACK_ADMIN_SETTINGS_SAVED_SUCCESSFULLY','Desired admin settings have been applied.',NOW(),'');

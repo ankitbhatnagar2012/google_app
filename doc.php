@@ -6,7 +6,7 @@ $_custom_css = $_base_path . 'mods/google_app/module.css'; // use a custom style
 require (AT_INCLUDE_PATH.'header.inc.php');
 // database handling 
 $query = "SELECT * FROM ".TABLE_PREFIX."my_admin_settings";
-$result = mysql_query($query);
+$result = mysql_query($query, $db);
 $row = mysql_fetch_array($result);
 $my_string = $row['flags'];
 $bit = $my_string[0];

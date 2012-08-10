@@ -13,8 +13,9 @@ require (AT_INCLUDE_PATH.'header.inc.php');
             <b>>>> Google App Module settings</b><br />
             <center><b>Check desired services to enable them in Google Apps</b></center>
             <?php
+	    // fetching module configs
             $query = "SELECT * FROM ".TABLE_PREFIX."my_admin_settings";
-            $result = mysql_query($query);
+            $result = mysql_query($query, $db);
             $row = mysql_fetch_array($result) ;
             if(!$row){
             // no settings saved yet
@@ -26,7 +27,11 @@ require (AT_INCLUDE_PATH.'header.inc.php');
             $doc = $my_string[1];
             $cal = $my_string[2];
             $you = $my_string[3];       
-            }
+	    }
+	    // fetching calendar configs
+            $query = "SELECT * FROM ".TABLE_PREFIX."calendar_settings";
+            $result = mysql_query($query, $db);
+            $row = mysql_fetch_array($result);              
             ?>
             <form name="service_check" action="mods/google_app/admin_settings.php" method="POST">
                 <input type="checkbox" <?php if($doc) { ?> checked="true" <?php } ?> name="doc" value="1" /> Google Docs<br />
@@ -36,10 +41,14 @@ require (AT_INCLUDE_PATH.'header.inc.php');
             <!-- Google Calendars settings -->
             <b>>>> Google Calendars settings</b><br />
             <center><b>Fill up following the API settings :</b></center><br />
-                Client Id     : <input type="text" name="client_id" value="<?php echo $_config['google_app_client_id']?>" size="60" /><br />
-                Client secret : <input type="text" name="client_secret" value="<?php echo $_config['google_app_client_secret']?>" size="60" /><br />
-                Redirect URI  : <input type="text" name="redirect_uri" value="<?php echo $_config['google_app_redirect_uri']?>" size="60" /><br />
-                Developer Key : <input type="text" name="developer_key" value="<?php echo $_config['google_app_developer_key']?>" size="150" /><br />
+                Client Id     : <input type="text" name="client_id" 
+		      value="<?php echo $row['client_id']?>" size="60" /><br />
+                Client secret : <input type="text" name="client_secret" 
+		      value="<?php echo $row['client_secret']?>" size="60" /><br />
+                Redirect URI  : <input type="text" name="redirect_uri" 
+		      value="<?php echo $row['redirect_uri']?>" size="60" /><br />
+                Developer Key : <input type="text" name="developer_key" 
+		      value="<?php echo $row['developer_key']?>" size="160" /><br />
                 <div class="row buttons"><input type="submit" value="SAVE SETTINGS" /></div>                 
             </form>
         </fieldset>	
