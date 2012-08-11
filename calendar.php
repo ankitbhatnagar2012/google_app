@@ -1,14 +1,21 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
+if(!isset($_SESSION['client_id'])) {
+    session_start();
+    }
+
 require_once('src/apiClient.php');
 require_once('src/contrib/apiCalendarService.php');
-session_start();
+
 $client = new apiClient();
 $client->setApplicationName("Google App Module");
 
-$client->setClientId($_GET['a']);
-$client->setClientSecret($_GET['b']);
-$client->setRedirectUri($_GET['c']);
-$client->setDeveloperKey($_GET['d']);
+$client->setClientId($_SESSION['client_id']);
+$client->setClientSecret($_SESSION['client_secret']);
+$client->setRedirectUri($_SESSION['redirect_uri']);
+$client->setDeveloperKey($_SESSION['developer_key']);
 
 $service = new apiCalendarService($client);
 

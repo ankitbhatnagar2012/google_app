@@ -31,8 +31,8 @@ INSERT INTO `language_text` VALUES ('en', '_module','access_calendars','Access G
 INSERT INTO `language_text` VALUES ('en', '_module','access_docs','Access Google Docs',NOW(),'');
 INSERT INTO `language_text` VALUES ('en', '_module','access_youtube','Access Youtube',NOW(),'');
 INSERT INTO `language_text` VALUES ('en', '_module','admin_public','Welcome to Google App Module for ATutor that helps you create and share highly interactive course content using Google Apps from within ATutor.<br />Features:<br /><ul>  <li>Use Google Docs to share your documents, presentations and spreadsheets in the ATutor course cartridge.</li>  <li>Use Youtube to upload and share course videos in the courses as well.</li><li>Use Google Calendars to include and share important dates and events with respect to the course.</li></ul><br /><br /><center><h2><b>Login with your</b> <a href="mods/google_app/google/login.php?login=true&openid_provider=google"><img src="./mods/google_app/login.jpg"/></a></h2></center>',NOW(),'');
-INSERT INTO `language_text` VALUES ('en', '_module','change_admin_settings_msg','',NOW(),'');
-INSERT INTO `language_text` VALUES ('en', '_module','change_calendar_settings_msg','',NOW(),'');
+INSERT INTO `language_text` VALUES ('en', '_module','change_admin_settings_msg','Check the desired services to enable them in the Google App module',NOW(),'');
+INSERT INTO `language_text` VALUES ('en', '_module','change_calendar_settings_msg','Configure your Google API services credentials. For help, check the README file',NOW(),'');
 
 
 #Configuration Settings :

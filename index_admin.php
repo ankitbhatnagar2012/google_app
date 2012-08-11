@@ -11,7 +11,7 @@ require (AT_INCLUDE_PATH.'header.inc.php');
             <legend class="group_form">Administrator Panel</legend>
             <!-- Google Calendars settings -->
             <b>>>> Google App Module settings</b><br />
-            <center><b>Check desired services to enable them in Google Apps</b></center>
+            <center><b><?php echo _AT('change_admin_settings_msg'); ?></b></center>
             <?php
 	    // fetching module configs
             $query = "SELECT * FROM ".TABLE_PREFIX."my_admin_settings";
@@ -40,7 +40,7 @@ require (AT_INCLUDE_PATH.'header.inc.php');
                 <!-- <div class="row buttons"><input type="submit" value="SAVE SETTINGS" /></div> -->
             <!-- Google Calendars settings -->
             <b>>>> Google Calendars settings</b><br />
-            <center><b>Fill up following the API settings :</b></center><br />
+            <center><b><?php echo _AT('change_calendar_settings_msg'); ?></b></center><br />
                 Client Id     : <input type="text" name="client_id" 
 		      value="<?php echo $row['client_id']?>" size="60" /><br />
                 Client secret : <input type="text" name="client_secret" 

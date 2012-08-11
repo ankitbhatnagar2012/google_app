@@ -17,8 +17,7 @@ $you = $my_string[3];
 $query = "SELECT * FROM ".TABLE_PREFIX."calendar_settings";
 $result = mysql_query($query, $db);
 $row = mysql_fetch_array($result);
-echo $row['client_id'];
-$href_string = "mods/google_app/calendar.php?a=".$row['client_id'].
+$href_string = "mods/google_app/calendar.vitals.inc.php?a=".$row['client_id'].
 		    "&b=".$row['client_secret'].
 		    "&c=".$row['redirect_uri'].
 		    "&d=".$row['developer_key'];
