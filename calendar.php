@@ -38,15 +38,23 @@ if ($client->getAccessToken()) {
 <!-- Form HTML here -->
 Enter details of the event : <br /><br />
 <form name="myForm" method="GET" action="calendar.php">
-    Title : <input type="text" name="title" value="Title" class="hintTextbox" /><br/>
-    Description : <input type="text" name="desc" value="Description" class="hintTextbox" /><br />
-    Where : <input type="text" name="where" value="Where" class="hintTextbox" /><br />
-    Start Date : <input type="text" name="startdate" value="YYYY-MM-DD" class="hintTextbox" />&nbsp;&nbsp;&nbsp;&nbsp;
-    Start Time : <input type="text" name="starttime" value="HH:MM 24hr format" class="hintTextbox" /><br />
-    End Date : <input type="text" name="enddate" value="YYYY-MM-DD" class="hintTextbox" />&nbsp;&nbsp;&nbsp;&nbsp;
-    End Time : <input type="text" name="endtime" value="HH:MM 24hr format" class="hintTextbox" /><br />
-    GMT/UTC Offset : <input type="text" name="offset" value="[+/-]DD" class="hintTextbox" />
+    <label for="title">Title : </label><input type="text" name="title" id="title" value="Title" class="hintTextbox" /> <br/>
+    
+    <label for="desc">Description : </label><input type="text" name="desc" id="desc" value="Description" class="hintTextbox" /><br />
+    
+    <label for="where">Where : </label><input type="text" name="where" id="where" value="Where" class="hintTextbox" /><br />
+    
+    <label for="startdate">Start Date : </label><input type="text" name="startdate" id="startdate" value="YYYY-MM-DD" class="hintTextbox" />&nbsp;&nbsp;&nbsp;&nbsp;
+    
+    <label for="starttime">Start Time : </label><input type="text" name="starttime" id="starttime" value="HH:MM 24hr format" class="hintTextbox" /><br />
+    
+    <label for="enddate">End Date : </label><input type="text" name="enddate" id="enddate" value="YYYY-MM-DD" class="hintTextbox" />&nbsp;&nbsp;&nbsp;&nbsp;
+    
+    <label for="endtime">End Time : </label><input type="text" name="endtime" id="endtime" value="HH:MM 24hr format" class="hintTextbox" /><br />
+    
+    <label for="offset">GMT/UTC Offset</label><input type="text" name="offset" id="offset" value="[+/-]DD" class="hintTextbox" />
     *Please enter "+05" if your timezone is "GMT+5"<br />
+    
     <input type="submit" value="CREATE CALENDAR EVENT" />
 </form>
 
@@ -80,7 +88,7 @@ Enter details of the event : <br /><br />
     ?>
     <br /><br />
     </center>
-    <br /><a href="#" onclick='window.close();'>Go Back</a>
+    <br /><a href="#" onclick='window.close();'>Close this window</a>
 
 <?php
   } else{

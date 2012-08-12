@@ -32,10 +32,23 @@ INSERT INTO `language_text` VALUES ('en', '_module','key_calendars','Google Cale
 INSERT INTO `language_text` VALUES ('en', '_module','key_youtube','Youtube',NOW(),'');
 INSERT INTO `language_text` VALUES ('en', '_module','key_home','Home',NOW(),'');
 
+INSERT INTO `language_text` VALUES ('en', '_module','key_client_id','Client ID',NOW(),'');
+INSERT INTO `language_text` VALUES ('en', '_module','key_client_secret','Client Secret',NOW(),'');
+INSERT INTO `language_text` VALUES ('en', '_module','key_redirect_uri','Redirect URI',NOW(),'');
+INSERT INTO `language_text` VALUES ('en', '_module','key_developer_key','Developer Key',NOW(),'');
+
 INSERT INTO `language_text` VALUES ('en', '_module','access_calendars','Access Google Calendars',NOW(),'');
 INSERT INTO `language_text` VALUES ('en', '_module','access_docs','Access Google Docs',NOW(),'');
 INSERT INTO `language_text` VALUES ('en', '_module','access_youtube','Access Youtube',NOW(),'');
 INSERT INTO `language_text` VALUES ('en', '_module','access_home','Google App Module helps you create & share interactive content using Google Apps from within ATutor',NOW(),'');
+
+INSERT INTO `language_text` VALUES ('en', '_module','BASE_HREF_HOME','mods/google_app/index_mystart.php',NOW(),'');
+INSERT INTO `language_text` VALUES ('en', '_module','BASE_HREF_DOCS','mods/google_app/doc.php',NOW(),'');
+INSERT INTO `language_text` VALUES ('en', '_module','BASE_HREF_CALS','mods/google_app/Cals.php',NOW(),'');
+INSERT INTO `language_text` VALUES ('en', '_module','BASE_HREF_YOU','mods/google_app/you.php',NOW(),'');
+
+INSERT INTO `language_text` VALUES ('en', '_module','VITAL_HREF_DOCS','mods/google_app/Docs.php',NOW(),'');
+INSERT INTO `language_text` VALUES ('en', '_module','VITAL_HREF_YOU','mods/google_app/you_index.php',NOW(),'');
 
 INSERT INTO `language_text` VALUES ('en', '_module','module_settings_title','>>> Google App Module Settings',NOW(),'');
 INSERT INTO `language_text` VALUES ('en', '_module','calendar_settings_title','>>> Calendar API Settings',NOW(),'');

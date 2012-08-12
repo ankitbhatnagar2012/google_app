@@ -27,17 +27,17 @@ $you = $my_string[3];
 	// check if flags are set
 	if($doc){
 ?>		
-		<li><a href="mods/google_app/doc.php"><?php echo _AT('key_docs'); ?></a></li>		
+		<li><a href="<?php echo _AT('BASE_HREF_DOCS'); ?>"><?php echo _AT('key_docs'); ?></a></li>		
 <?php
 	}
 	if($cal){
 ?>		
-		<li><a href="mods/google_app/Cals.php"><?php echo _AT('key_calendars'); ?></a></li>		
+		<li><a href="<?php echo _AT('BASE_HREF_CALS'); ?>"><?php echo _AT('key_calendars'); ?></a></li>		
 <?php
 	}
 	if($you){
 ?>		
-		<li><a href="mods/google_app/you.php"><?php echo _AT('key_youtube'); ?></a></li>		
+		<li><a href="<?php echo _AT('BASE_HREF_YOU'); ?>"><?php echo _AT('key_youtube'); ?></a></li>		
 <?php		
 	}  	  
 ?>        

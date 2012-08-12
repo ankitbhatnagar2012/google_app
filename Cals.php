@@ -27,13 +27,13 @@ $href_string = "mods/google_app/calendar.vitals.inc.php?a=".$row['client_id'].
 <div id="subnavlistcontainer">
     <div id="subnavbacktopage"></div>
     <ul id="subnavlist">
-        <li><a href="mods/google_app/index_mystart.php"><?php echo _AT('key_home'); ?></a></li>
+        <li><a href="<?php echo _AT('BASE_HREF_HOME'); ?>"><?php echo _AT('key_home'); ?></a></li>
 <?php
         
 	// check if flags are set
 	if($doc){
 ?>		
-		<li><a href="mods/google_app/doc.php"><?php echo _AT('key_docs'); ?></a></li>		
+		<li><a href="<?php echo _AT('BASE_HREF_DOCS'); ?>"><?php echo _AT('key_docs'); ?></a></li>		
 <?php
 	}
 ?>
@@ -41,7 +41,7 @@ $href_string = "mods/google_app/calendar.vitals.inc.php?a=".$row['client_id'].
 <?php
 	if($you){
 ?>		
-		<li><a href="mods/google_app/you.php"><?php echo _AT('key_youtube'); ?></a></li>		
+		<li><a href="<?php echo _AT('BASE_HREF_YOU'); ?>"><?php echo _AT('key_youtube'); ?></a></li>		
 <?php		
 	}  	  
 ?>      
