@@ -228,16 +228,7 @@ function retrieveAllDocuments($client, $html)
 function retrieveWPDocs($client, $html)
 {
   if ($html) {echo "<h2>Your word processing documents</h2>\n";}
-
-    // echo "Ankit";
-    //////////////// Error occuring here ////////////////////////
-    // seems as an invalid end-point
-
-    $feed = $client->getDocumentListFeed();
-    /////////////////////////////////////////////////////////////
-    
-    
-    // echo "Bhatnagar";
+    $feed = $client->getDocumentListFeed();    
   printDocumentsFeed($feed, $html);
 }
 
@@ -312,12 +303,9 @@ function uploadDocument($docs, $html, $originalFileName,
   // file name is used as the title of the document and the mime type
   // is determined based on the extension on the original file name.
   
-  
-  // echo "Ankit";
   $newDocumentEntry = $docs->uploadFile($fileToUpload, $originalFileName,
       null, Zend_Gdata_Docs::DOCUMENTS_LIST_FEED_URI);
-  // echo "Bhatnagar";
-
+  
   echo "New Document Title: ";
 
   if ($html) {
@@ -635,7 +623,7 @@ function displayMenu()
         <li><a class="menuSelect" href="./Docs.php?menu=list">List Documents</a></li>
         <li><a class="menuSelect" href="./Docs.php?menu=upload">Upload a new document</a></li>
         <!-- <li><a class="menuSelect" href="./index_mystart.php">Go back</a></li> -->
-        <li><a class="menuSelect" href="#" onclick='window.close();'>Go back</a></li>
+        <li><a class="menuSelect" href="#" onclick='window.close();'>Close this window</a></li>
     </ul>
 
 
@@ -819,6 +807,8 @@ function displayListMenu()
     </p>
     <p><input type="submit" value="Retrieve Spreadsheets &rarr;"></p>
 </form>
+
+<a href="Docs.php">Go back</a>
 <?php
 }
 
@@ -858,13 +848,7 @@ function displayUploadMenu()
 <form method="post" enctype="multipart/form-data">
     <h3>Select a Document to Upload</h3>
     <p>Upload a file from your computer to <a href="http://docs.google.com">Google Documents</a>.</p>
-    <!--
-    <p>
-        <input type="hidden" name="command" value="uploadDocument" />
-        <input name="uploadedFile" type="file" />
-    </p>
-    <p><input type="submit" value="Upload the Document &rarr;"></p>
-    -->
+    <a href="Docs.php">Go back</a>
 </form>
 
 <?php
