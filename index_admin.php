@@ -40,15 +40,25 @@ require (AT_INCLUDE_PATH.'header.inc.php');
             <!-- Google Calendars settings -->
             <b><?php echo _AT('calendar_settings_title'); ?></b><br />
             <center><b><?php echo _AT('change_calendar_settings_msg'); ?></b></center><br />
-                <label for="client_id"><?php echo _AT('key_client_id'); ?>&nbsp;</label><input type="text" name="client_id" id="client_id" 
-		      value="<?php echo $row['client_id'] ?>" size="60" /><br />
-                <label for="client_secret"><?php echo _AT('key_client_secret'); ?>&nbsp;</label><input type="text" name="client_secret" id="client_secret"
-		      value="<?php echo $row['client_secret'] ?>" size="60" /><br />
-                <label for="redirect_uri"><?php echo _AT('key_redirect_uri'); ?>&nbsp;</label><input type="text" name="redirect_uri" id="redirect_uri"
-		      value="<?php echo $row['redirect_uri'] ?>" size="60" /><br />
-                <label for="developer_key"><?php echo _AT('key_developer_key'); ?>&nbsp;</label><input type="text" name="developer_key" id="developer_key"
-		      value="<?php echo $row['developer_key'] ?>" size="160" /><br />
-                <div class="row buttons"><input type="submit" value="<?php echo _AT('save_settings'); ?>" /></div>                 
+                
+		<dl>
+		    <dt><label for="client_id"><?php echo _AT('key_client_id'); ?>&nbsp;</label></dt>
+		    <dd><input type="text" name="client_id" id="client_id" 
+		      value="<?php echo $row['client_id'] ?>" size="160" /></dd>
+
+		    <dt><label for="client_secret"><?php echo _AT('key_client_secret'); ?>&nbsp;</label></dt>
+		    <dd><input type="text" name="client_secret" id="client_secret"
+		      value="<?php echo $row['client_secret'] ?>" size="160" /></dd>
+
+		    <dt><label for="redirect_uri"><?php echo _AT('key_redirect_uri'); ?>&nbsp;</label></dt>
+		    <dd><input type="text" name="redirect_uri" id="redirect_uri"
+		      value="<?php echo $row['redirect_uri'] ?>" size="160" /></dd>
+    
+		    <dt><label for="developer_key"><?php echo _AT('key_developer_key'); ?>&nbsp;</label></dt>
+		    <dd><input type="text" name="developer_key" id="developer_key"
+		      value="<?php echo $row['developer_key'] ?>" size="160" /></dd>
+		</dl>
+		<div class="row buttons"><input type="submit" value="<?php echo _AT('save_settings'); ?>" /></div>                 
             </form>
         </fieldset>	
 </div>
