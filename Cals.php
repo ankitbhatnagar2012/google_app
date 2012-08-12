@@ -2,7 +2,7 @@
 $_user_location = 'users';
 define('AT_INCLUDE_PATH', '../../include/');
 require (AT_INCLUDE_PATH.'vitals.inc.php');
-$_custom_css = $_base_path . 'mods/google_app/module.css'; // use a custom stylesheet
+$_custom_css = $_base_path . 'mods/google_app/module.css';
 require (AT_INCLUDE_PATH.'header.inc.php');
 // fetching module configs 
 $query = "SELECT * FROM ".TABLE_PREFIX."my_admin_settings";
@@ -27,21 +27,21 @@ $href_string = "mods/google_app/calendar.vitals.inc.php?a=".$row['client_id'].
 <div id="subnavlistcontainer">
     <div id="subnavbacktopage"></div>
     <ul id="subnavlist">
-        <li><a href="mods/google_app/index_mystart.php">Home</a></li>
+        <li><a href="mods/google_app/index_mystart.php"><?php echo _AT('key_home'); ?></a></li>
 <?php
         
 	// check if flags are set
 	if($doc){
 ?>		
-		<li><a href="mods/google_app/doc.php">Google Docs</a></li>		
+		<li><a href="mods/google_app/doc.php"><?php echo _AT('key_docs'); ?></a></li>		
 <?php
 	}
 ?>
-                <li class="active">Google Calendars</li>
+                <li class="active"><?php echo _AT('key_calendars'); ?></li>
 <?php
 	if($you){
 ?>		
-		<li><a href="mods/google_app/you.php">Youtube</a></li>		
+		<li><a href="mods/google_app/you.php"><?php echo _AT('key_youtube'); ?></a></li>		
 <?php		
 	}  	  
 ?>      
@@ -51,9 +51,13 @@ $href_string = "mods/google_app/calendar.vitals.inc.php?a=".$row['client_id'].
 <!-- Content HTML rendered -->
 <div class="input-form">
 	<fieldset class="group_form">
-            <legend class="group_form">Google Calendars</legend>
+            <legend class="group_form"><?php echo _AT('key_calendars'); ?></legend>
             <center>
-                <a href="<?php echo $href_string; ?>"><?php echo _AT('access_calendars'); ?></a><br />
+                <!-- <a href="<?php echo $href_string; ?>"><?php echo _AT('access_calendars'); ?></a><br /> -->
+
+		<a href="<?php echo $href_string; ?>" 
+		      onclick="ATutor.poptastic('<?php echo $href_string; ?>'); return false;" 
+			  target="_new"><?php echo _AT('access_calendars');?></a>
             </center>
 	</fieldset>	
 </div>

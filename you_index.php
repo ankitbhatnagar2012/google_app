@@ -61,7 +61,7 @@ function printAuthenticatedActions()
         <div id="syndicatedUploadDiv"></div><div id="syndicatedUploadStatusDiv">
         </div></li>
         
-        <li><a href="./index_mystart.php">Go back</a></li>
+        <li><a href="#" onclick='window.close();'>Go back</a></li>
         
         </ul>
         

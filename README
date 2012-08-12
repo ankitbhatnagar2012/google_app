@@ -1,8 +1,51 @@
-Google App Module for ATutor : 
-
-This module helps ATutor users to create & share highly interactive content using Google Apps & Data Services.
+Google App Module for ATutor :
+ 
+    This module helps ATutor users to create & share highly interactive content using Google Apps & Data Services.
 
 Module Highlights :
+
 -> Using Google Docs to share documents, spreadsheets & presentations with the course.
 -> Using Youtube to upload videos and share them within the course content.
 -> Using Google Calendar to create & share important dates corresponding to the course.
+
+Administrator Settings Panel :
+
+	When you install the Google App module into your ATutor installation, you need to configure the module
+according to your environment. To do this :
+
+(1) Check all the desired services that you want to enable in the module, viz Google Docs, Google Calendars & Youtube. By
+default, all the services are enabled.
+
+(2) Register for a Google API Console account by visiting the following link - https://code.google.com/apis/console
+You may use your existing Google Account to sign-in into Google API console. At the link :-
+
+>>> Click on " Create project ", if you have never earlier worked with a Google API project; else, proceed to the next step.
+       
+>>> Now, click on the " Services " tab in the left pane. Make sure that the status of the Calendar API button is set to ON
+
+>>> Next, click on the " API access " tab in the left pane. Click on the button that says - " Create an OAuth 2.0   Client ID ".
+
+>>> Fill in the name for the product you're registering; in this case - "Google App Module" and click Next.
+
+>>> Now comes the most important part of the API registration - configuring the Redirect URI.
+    (a) Enter the name of your site or hostname at which the ATutor is installed.
+    (b) Click on " Create " to create your OAuth 2.0 enabled Client ID.
+
+>>> Next, you'll have to edit the settings to configure the exact the Redirect URI, which at present should be like - 
+    <your_hostname.com>/oauth2callback. Click on " Edit settings... " in the right pane adjacent to your client-id information.
+
+>>> In the textbox for " Authorised Redirect URIs ", you need to enter the correct path to the " calendar.php " file on    your domain.
+      For e.g. <your_hostname.com> / <path_to_ATutor_installation> / mods / google_app / calendar.php.
+
+>>> Leave the textbox for " Authorised Javascript Origins " as it is and click on " Update " to update the changes.
+
+Now, you have registered for a valid Google API access account. Next configure the module settings.
+
+>>> At the Google App Module Administrator Settings Panel, enter the values of Client ID configuration/s you just
+    created at the Google API console. Copy and paste the values of Client ID, Client secret and Redirect URI. Leave the value of Developer Key to its default.
+
+>>> Click on " SAVE SETTINGS " tab, to save the desired admin settings.
+
+This should complete the admin-configuration of the module.
+
+						  ************

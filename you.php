@@ -2,7 +2,7 @@
 $_user_location = 'users';
 define('AT_INCLUDE_PATH', '../../include/');
 require (AT_INCLUDE_PATH.'vitals.inc.php');
-$_custom_css = $_base_path . 'mods/google_app/module.css'; // use a custom stylesheet
+$_custom_css = $_base_path . 'mods/google_app/module.css';
 require (AT_INCLUDE_PATH.'header.inc.php');
 
 // database handling 
@@ -20,37 +20,35 @@ $you = $my_string[3];
 <div id="subnavlistcontainer">
     <div id="subnavbacktopage"></div>
     <ul id="subnavlist">
-        <li><a href="mods/google_app/index_mystart.php">Home</a></li>
+        <li><a href="mods/google_app/index_mystart.php"><?php echo _AT('key_home'); ?></a></li>
 <?php
         
 	// check if flags are set
 	if($doc){
 ?>		
-		<li><a href="mods/google_app/doc.php">Google Docs</a></li>		
+		<li><a href="mods/google_app/doc.php"><?php echo _AT('key_docs'); ?></a></li>		
 <?php
 	}
 	if($cal){
 ?>		
-		<li><a href="mods/google_app/Cals.php">Google Calendars</a></li>		
+		<li><a href="mods/google_app/Cals.php"><?php echo _AT('key_calendars'); ?></a></li>		
 <?php
 	}
 ?>
-                <li class="active">Youtube</li>
+                <li class="active"><?php echo _AT('key_youtube'); ?></li>
     </ul>
 </div>
 
 <!-- Content HTML rendered -->
 <div class="input-form">
 	<fieldset class="group_form">
-            <legend class="group_form">Youtube</legend>
-            <!--
+            <legend class="group_form"><?php echo _AT('key_youtube'); ?></legend>
             <center>
-                <a href="mods/google_app/you_index.php" target="iframe_target">Access Youtube</a>
-            </center>
-            <iframe src="" name="iframe_target" frameborder="0" width="100%" height="500px"></iframe>          
-            -->
-            <center>
-                <a href="mods/google_app/you_index.php"><?php echo _AT('access_youtube') ?></a>
+                <!-- <a href="mods/google_app/you_index.php"><?php echo _AT('access_youtube') ?></a> -->
+
+		<a href="mods/google_app/you_index.php" 
+		      onclick="ATutor.poptastic('mods/google_app/you_index.php'); return false;" 
+			  target="_new"><?php echo _AT('access_youtube');?></a>
             </center>
             
 	</fieldset>	

@@ -19,17 +19,17 @@ $you = $my_string[3];
 <div id="subnavlistcontainer">
     <div id="subnavbacktopage"></div>
     <ul id="subnavlist">
-        <li><a href="mods/google_app/index_mystart.php">Home</a></li>        		
+        <li><a href="mods/google_app/index_mystart.php"><?php echo _AT('key_home'); ?></a></li>        		
 	<li class="active">Google Docs</li>		
 <?php
 	if($cal){
 ?>		
-		<li><a href="mods/google_app/Cals.php">Google Calendars</a></li>		
+		<li><a href="mods/google_app/Cals.php"><?php echo _AT('key_calendars'); ?></a></li>		
 <?php
 	}
 	if($you){
 ?>		
-		<li><a href="mods/google_app/you.php">Youtube</a></li>		
+		<li><a href="mods/google_app/you.php"><?php echo _AT('key_youtube'); ?></a></li>		
 <?php		
 	}  	  
 ?>      
@@ -39,15 +39,13 @@ $you = $my_string[3];
 <!-- Content HTML rendered --> 
 <div class="input-form">
 	<fieldset class="group_form">
-            <legend class="group_form">Google Docs</legend>
-            <!--
+            <legend class="group_form"><?php echo _AT('key_docs'); ?></legend>
             <center>
-                <a href="mods/google_app/Docs.php" target="iframe_target">Access Google Docs</a>
-            </center>
-            <iframe src="" name="iframe_target" frameborder="0" width="100%" height="500px"></iframe>
-            -->
-            <center>
-                <a href="mods/google_app/Docs.php"><?php echo _AT('access_docs'); ?></a>
+                <!-- <a href="mods/google_app/Docs.php"><?php echo _AT('access_docs'); ?></a><br /> -->
+
+		<a href="mods/google_app/Docs.php" 
+		      onclick="ATutor.poptastic('mods/google_app/Docs.php'); return false;" 
+			  target="_new"><?php echo _AT('access_docs');?></a>		
             </center>
 	</fieldset>	
 </div>

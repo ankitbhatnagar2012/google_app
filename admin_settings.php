@@ -77,7 +77,6 @@ require (AT_INCLUDE_PATH.'header.inc.php');
             $success = TRUE; 
         }
     }
-
     if($success){
 	  $msg->printFeedbacks('ADMIN_SETTINGS_SAVED_SUCCESSFULLY');
     } else {

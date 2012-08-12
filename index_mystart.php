@@ -7,7 +7,7 @@ require (AT_INCLUDE_PATH.'header.inc.php');
 
 // database handling 
 $query = "SELECT * FROM ".TABLE_PREFIX."my_admin_settings";
-$result = mysql_query($query);
+$result = mysql_query($query, $db);
 $row = mysql_fetch_array($result);
 $my_string = $row['flags'];
 $bit = $my_string[0];
@@ -20,24 +20,24 @@ $you = $my_string[3];
 <div id="subnavlistcontainer">
     <div id="subnavbacktopage"></div>
     <ul id="subnavlist">
-        <li class="active">Home</li>
+        <li class="active"><?php echo _AT('key_home'); ?></li>
 
 <?php
         
 	// check if flags are set
 	if($doc){
 ?>		
-		<li><a href="mods/google_app/doc.php">Google Docs</a></li>		
+		<li><a href="mods/google_app/doc.php"><?php echo _AT('key_docs'); ?></a></li>		
 <?php
 	}
 	if($cal){
 ?>		
-		<li><a href="mods/google_app/Cals.php">Google Calendars</a></li>		
+		<li><a href="mods/google_app/Cals.php"><?php echo _AT('key_calendars'); ?></a></li>		
 <?php
 	}
 	if($you){
 ?>		
-		<li><a href="mods/google_app/you.php">Youtube</a></li>		
+		<li><a href="mods/google_app/you.php"><?php echo _AT('key_youtube'); ?></a></li>		
 <?php		
 	}  	  
 ?>        
@@ -48,12 +48,10 @@ $you = $my_string[3];
 <div class="input-form">
 	<fieldset class="group_form">
             <legend class="group_form">Google App Module</legend>
-            <center>
-		
-               The Google App Addon module helps you create and share interactive content from within your ATutor course. <?php echo $_config['dummy']; ?>
-               
+            <center><?php echo _AT('access_home'); ?>
+               <!--
                <li style="padding-bottom: 20px;"><a href="documentation/index_list.php?lang=<?php echo $_SESSION['lang']; ?>" onclick="ATutor.poptastic('<?php echo AT_BASE_HREF; ?>documentation/index_list.php?lang=<?php echo $_SESSION['lang']; ?>'); return false;" target="_new"><?php echo _AT('atutor_handbook');?></a></li>
-
+		-->
             </center>
 	</fieldset>	
 </div>

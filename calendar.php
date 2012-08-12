@@ -36,7 +36,7 @@ if (isset($_SESSION['token'])) {
 if ($client->getAccessToken()) {
 ?>
 <!-- Form HTML here -->
-Enter details of the event : <br />
+Enter details of the event : <br /><br />
 <form name="myForm" method="GET" action="calendar.php">
     Title : <input type="text" name="title" value="Title" class="hintTextbox" /><br/>
     Description : <input type="text" name="desc" value="Description" class="hintTextbox" /><br />
@@ -47,8 +47,10 @@ Enter details of the event : <br />
     End Time : <input type="text" name="endtime" value="HH:MM 24hr format" class="hintTextbox" /><br />
     GMT/UTC Offset : <input type="text" name="offset" value="[+/-]DD" class="hintTextbox" />
     *Please enter "+05" if your timezone is "GMT+5"<br />
-    <input type="submit" value="SUBMIT" />
+    <input type="submit" value="CREATE CALENDAR EVENT" />
 </form>
+
+<a href="#" onclick='window.close();'>Close this window</a>
 <!-- -->
 <?php
     if(isset($_GET['desc'])){
@@ -70,18 +72,20 @@ Enter details of the event : <br />
   if(isset($createdEvent)){
     
 ?>
-    <center>Event created at :&nbsp;
-    <a href="<?php echo $createdEvent["htmlLink"] ?>"><?php echo $createdEvent["summary"] ?></a><br /><br />
-    To embed this calendar-event in your course content, add the following link : <br /><br />
-    <?php echo $createdEvent["htmlLink"] ?><br />
-    <?php echo $_config['dummy'] ?>
-
+    <center>Google Calendar event created at :&nbsp;
+    <a href="<?php echo $createdEvent["htmlLink"]; ?>"><?php echo $createdEvent["summary"]; ?></a><br /><br />
+    To embed this Google Calendar event into your course, add the following link : <br />
+    <?php // $msg->printErrors('ADDED_CALENDAR_EVENT'); 
+	  echo $createdEvent["htmlLink"]; 
+    ?>
+    <br /><br />
     </center>
-    <br /><a href="Cals.php">Go Back</a>
+    <br /><a href="#" onclick='window.close();'>Go Back</a>
 
 <?php
   } else{
-      echo "Your event could not be created";      
+       // $msg->printErrors('FAILED_TO_CREATE_CALENDAR_EVENT');
+      echo "Failed to create Calendar event. Please try again.";
   }  
 $_SESSION['token'] = $client->getAccessToken();
     }

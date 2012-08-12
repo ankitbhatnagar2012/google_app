@@ -285,9 +285,9 @@ function generateUrlInformation()
 {
     if (!isset($_SESSION['operationsUrl']) || !isset($_SESSION['homeUrl'])) {
         $_SESSION['operationsUrl'] = 'http://'. $_SERVER['HTTP_HOST']
-                                   . $_SERVER['PHP_SELF'];
+                                   .$_SERVER['PHP_SELF'];
         $path = explode('/', $_SERVER['PHP_SELF']);
-        $path[count($path)-1] = 'index.php';
+        $path[count($path)-1] = 'you_index.php';
         $_SESSION['homeUrl'] = 'http://'. $_SERVER['HTTP_HOST']
                              . implode('/', $path);
     }

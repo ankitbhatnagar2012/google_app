@@ -633,12 +633,9 @@ function displayMenu()
 
     <ul id="menuSelect">
         <li><a class="menuSelect" href="./Docs.php?menu=list">List Documents</a></li>
-        <!--
-        <li><a class="menuSelect" href="mods/google_app/Docs.php?menu=query">Query your Documents</a></li>
-        -->        
         <li><a class="menuSelect" href="./Docs.php?menu=upload">Upload a new document</a></li>
-        
-        <li><a class="menuSelect" href="./index_mystart.php">Go back</a></li>
+        <!-- <li><a class="menuSelect" href="./index_mystart.php">Go back</a></li> -->
+        <li><a class="menuSelect" href="#" onclick='window.close();'>Go back</a></li>
     </ul>
 
 

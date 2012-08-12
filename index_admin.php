@@ -10,7 +10,7 @@ require (AT_INCLUDE_PATH.'header.inc.php');
 	<fieldset class="group_form">
             <legend class="group_form">Administrator Panel</legend>
             <!-- Google Calendars settings -->
-            <b>>>> Google App Module settings</b><br />
+            <b><?php echo _AT('module_settings_title'); ?></b><br />
             <center><b><?php echo _AT('change_admin_settings_msg'); ?></b></center>
             <?php
 	    // fetching module configs
@@ -34,22 +34,21 @@ require (AT_INCLUDE_PATH.'header.inc.php');
             $row = mysql_fetch_array($result);              
             ?>
             <form name="service_check" action="mods/google_app/admin_settings.php" method="POST">
-                <input type="checkbox" <?php if($doc) { ?> checked="true" <?php } ?> name="doc" value="1" /> Google Docs<br />
-                <input type="checkbox" <?php if($cal) { ?> checked="true" <?php } ?> name="cal" value="1" /> Google Calendars<br />
-                <input type="checkbox" <?php if($you) { ?> checked="true" <?php } ?> name="you" value="1" /> Youtube<br /><br />
-                <!-- <div class="row buttons"><input type="submit" value="SAVE SETTINGS" /></div> -->
+                <input type="checkbox" <?php if($doc) { ?> checked="true" <?php } ?> name="doc" value="1" /><?php echo _AT('key_docs'); ?><br />
+                <input type="checkbox" <?php if($cal) { ?> checked="true" <?php } ?> name="cal" value="1" /><?php echo _AT('key_calendars'); ?><br />
+                <input type="checkbox" <?php if($you) { ?> checked="true" <?php } ?> name="you" value="1" /><?php echo _AT('key_youtube'); ?><br /><br />                
             <!-- Google Calendars settings -->
-            <b>>>> Google Calendars settings</b><br />
+            <b><?php echo _AT('calendar_settings_title'); ?></b><br />
             <center><b><?php echo _AT('change_calendar_settings_msg'); ?></b></center><br />
                 Client Id     : <input type="text" name="client_id" 
-		      value="<?php echo $row['client_id']?>" size="60" /><br />
+		      value="<?php echo $row['client_id'] ?>" size="60" /><br />
                 Client secret : <input type="text" name="client_secret" 
-		      value="<?php echo $row['client_secret']?>" size="60" /><br />
+		      value="<?php echo $row['client_secret'] ?>" size="60" /><br />
                 Redirect URI  : <input type="text" name="redirect_uri" 
-		      value="<?php echo $row['redirect_uri']?>" size="60" /><br />
+		      value="<?php echo $row['redirect_uri'] ?>" size="60" /><br />
                 Developer Key : <input type="text" name="developer_key" 
-		      value="<?php echo $row['developer_key']?>" size="160" /><br />
-                <div class="row buttons"><input type="submit" value="SAVE SETTINGS" /></div>                 
+		      value="<?php echo $row['developer_key'] ?>" size="160" /><br />
+                <div class="row buttons"><input type="submit" value="<?php echo _AT('save_settings'); ?>" /></div>                 
             </form>
         </fieldset>	
 </div>
