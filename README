@@ -42,7 +42,7 @@ You may use your existing Google Account to sign-in into Google API console. At 
 Now, you have registered for a valid Google API access account. Next configure the module settings.
 
 >>> At the Google App Module Administrator Settings Panel, enter the values of Client ID configuration/s you just
-    created at the Google API console. Copy and paste the values of Client ID, Client secret and Redirect URI. Leave the value of Developer Key to its default.
+    created at the Google API console. Copy and paste the values of Client ID, Client secret and Redirect URI.
 
 >>> Click on " SAVE SETTINGS " tab, to save the desired admin settings.
 

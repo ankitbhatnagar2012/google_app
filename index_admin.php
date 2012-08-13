@@ -52,11 +52,7 @@ require (AT_INCLUDE_PATH.'header.inc.php');
 
 		    <dt><label for="redirect_uri"><?php echo _AT('key_redirect_uri'); ?>&nbsp;</label></dt>
 		    <dd><input type="text" name="redirect_uri" id="redirect_uri"
-		      value="<?php echo $row['redirect_uri'] ?>" size="160" /></dd>
-    
-		    <dt><label for="developer_key"><?php echo _AT('key_developer_key'); ?>&nbsp;</label></dt>
-		    <dd><input type="text" name="developer_key" id="developer_key"
-		      value="<?php echo $row['developer_key'] ?>" size="160" /></dd>
+		      value="<?php echo $row['redirect_uri'] ?>" size="160" /></dd>	    
 		</dl>
 		<div class="row buttons"><input type="submit" value="<?php echo _AT('save_settings'); ?>" /></div>                 
             </form>
