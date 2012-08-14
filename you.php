@@ -44,9 +44,7 @@ $you = $my_string[3];
 	<fieldset class="group_form">
             <legend class="group_form"><?php echo _AT('key_youtube'); ?></legend>
             <center>
-                <!-- <a href="mods/google_app/you_index.php"><?php echo _AT('access_youtube') ?></a> -->
-
-		<a href="mods/google_app/you_index.php" 
+                <a href="mods/google_app/you_index.php" 
 		      onclick="ATutor.poptastic('mods/google_app/you_index.php'); return false;" 
 			  target="_new"><?php echo _AT('access_youtube');?></a>
             </center>

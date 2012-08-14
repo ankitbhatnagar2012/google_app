@@ -42,14 +42,6 @@ INSERT INTO `language_text` VALUES ('en', '_module','access_docs','Access Google
 INSERT INTO `language_text` VALUES ('en', '_module','access_youtube','Access Youtube',NOW(),'');
 INSERT INTO `language_text` VALUES ('en', '_module','access_home','Google App Module helps you create & share interactive content using Google Apps from within ATutor',NOW(),'');
 
-INSERT INTO `language_text` VALUES ('en', '_module','BASE_HREF_HOME','mods/google_app/index_mystart.php',NOW(),'');
-INSERT INTO `language_text` VALUES ('en', '_module','BASE_HREF_DOCS','mods/google_app/doc.php',NOW(),'');
-INSERT INTO `language_text` VALUES ('en', '_module','BASE_HREF_CALS','mods/google_app/Cals.php',NOW(),'');
-INSERT INTO `language_text` VALUES ('en', '_module','BASE_HREF_YOU','mods/google_app/you.php',NOW(),'');
-
-INSERT INTO `language_text` VALUES ('en', '_module','VITAL_HREF_DOCS','mods/google_app/Docs.php',NOW(),'');
-INSERT INTO `language_text` VALUES ('en', '_module','VITAL_HREF_YOU','mods/google_app/you_index.php',NOW(),'');
-
 INSERT INTO `language_text` VALUES ('en', '_module','module_settings_title','>>> Google App Module Settings',NOW(),'');
 INSERT INTO `language_text` VALUES ('en', '_module','calendar_settings_title','>>> Calendar API Settings',NOW(),'');
 INSERT INTO `language_text` VALUES ('en', '_module','save_settings','SAVE SETTINGS',NOW(),'');

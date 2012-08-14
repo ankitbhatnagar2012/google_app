@@ -19,17 +19,17 @@ $you = $my_string[3];
 <div id="subnavlistcontainer">
     <div id="subnavbacktopage"></div>
     <ul id="subnavlist">
-        <li><a href="<?php echo _AT('BASE_HREF_HOME'); ?>"><?php echo _AT('key_home'); ?></a></li>        		
+        <li><a href="mods/google_app/index_mystart.php"><?php echo _AT('key_home'); ?></a></li>        		
 	<li class="active"><?php echo _AT('key_docs'); ?></li>		
 <?php
 	if($cal){
 ?>		
-		<li><a href="<?php echo _AT('BASE_HREF_CALS'); ?>"><?php echo _AT('key_calendars'); ?></a></li>		
+		<li><a href="mods/google_app/Cals.php"><?php echo _AT('key_calendars'); ?></a></li>		
 <?php
 	}
 	if($you){
 ?>		
-		<li><a href="<?php echo _AT('BASE_HREF_YOU'); ?>"><?php echo _AT('key_youtube'); ?></a></li>		
+		<li><a href="mods/google_app/you.php"><?php echo _AT('key_youtube'); ?></a></li>		
 <?php		
 	}  	  
 ?>      
@@ -41,10 +41,8 @@ $you = $my_string[3];
 	<fieldset class="group_form">
             <legend class="group_form"><?php echo _AT('key_docs'); ?></legend>
             <center>
-                <!-- <a href="mods/google_app/Docs.php"><?php echo _AT('access_docs'); ?></a><br /> -->
-
-		<a href="<?php echo _AT('VITAL_HREF_DOCS'); ?>" 
-		      onclick="ATutor.poptastic('<?php echo _AT('VITAL_HREF_DOCS'); ?>'); return false;" 
+                <a href="mods/google_app/Docs.php" 
+		      onclick="ATutor.poptastic('mods/google_app/Docs.php'); return false;" 
 			  target="_new"><?php echo _AT('access_docs');?></a>		
             </center>
 	</fieldset>	

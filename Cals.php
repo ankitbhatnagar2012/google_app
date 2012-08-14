@@ -27,13 +27,13 @@ $href_string = "mods/google_app/calendar.vitals.inc.php?a=".$row['client_id'].
 <div id="subnavlistcontainer">
     <div id="subnavbacktopage"></div>
     <ul id="subnavlist">
-        <li><a href="<?php echo _AT('BASE_HREF_HOME'); ?>"><?php echo _AT('key_home'); ?></a></li>
+        <li><a href="mods/google_app/index_mystart.php"><?php echo _AT('key_home'); ?></a></li>
 <?php
         
 	// check if flags are set
 	if($doc){
 ?>		
-		<li><a href="<?php echo _AT('BASE_HREF_DOCS'); ?>"><?php echo _AT('key_docs'); ?></a></li>		
+		<li><a href="mods/google_app/doc.php"><?php echo _AT('key_docs'); ?></a></li>		
 <?php
 	}
 ?>
@@ -41,7 +41,7 @@ $href_string = "mods/google_app/calendar.vitals.inc.php?a=".$row['client_id'].
 <?php
 	if($you){
 ?>		
-		<li><a href="<?php echo _AT('BASE_HREF_YOU'); ?>"><?php echo _AT('key_youtube'); ?></a></li>		
+		<li><a href="mods/google_app/you.php"><?php echo _AT('key_youtube'); ?></a></li>		
 <?php		
 	}  	  
 ?>      
@@ -52,9 +52,7 @@ $href_string = "mods/google_app/calendar.vitals.inc.php?a=".$row['client_id'].
 <div class="input-form">
 	<fieldset class="group_form">
             <legend class="group_form"><?php echo _AT('key_calendars'); ?></legend>
-            <center>
-                <!-- <a href="<?php echo $href_string; ?>"><?php echo _AT('access_calendars'); ?></a><br /> -->
-
+            <center>                
 		<a href="<?php echo $href_string; ?>" 
 		      onclick="ATutor.poptastic('<?php echo $href_string; ?>'); return false;" 
 			  target="_new"><?php echo _AT('access_calendars');?></a>
