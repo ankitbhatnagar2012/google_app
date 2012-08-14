@@ -2,6 +2,8 @@
 define('AT_INCLUDE_PATH', '../../include/');
 require (AT_INCLUDE_PATH.'vitals.inc.php');
 $_custom_css = $_base_path . 'mods/google_app/module.css';
+$_custom_head = '<script type="text/javascript" src="mods/google_app/myScript.js" ></script>';
+
 admin_authenticate(AT_ADMIN_PRIV_GOOGLE_APP);
 require (AT_INCLUDE_PATH.'header.inc.php');
 ?>
@@ -28,12 +30,12 @@ require (AT_INCLUDE_PATH.'header.inc.php');
             $cal = $my_string[2];
             $you = $my_string[3];       
 	    }
-	    // fetching calendar configs
-            $query = "SELECT * FROM ".TABLE_PREFIX."calendar_settings";
+	    //fetching calendar configs
+	    $query = "SELECT * FROM ".TABLE_PREFIX."calendar_settings";
             $result = mysql_query($query, $db);
-            $row = mysql_fetch_array($result);              
-            ?>
-            <form name="service_check" action="mods/google_app/admin_settings.php" method="POST">
+            $row = mysql_fetch_array($result); 
+	    ?>
+            <form name="service_check" action="mods/google_app/admin_settings.php" onsubmit="return validateForm()" method="POST">
                 <input type="checkbox" <?php if($doc) { ?> checked="true" <?php } ?> name="doc" value="1" /><?php echo _AT('key_docs'); ?><br />
                 <input type="checkbox" <?php if($cal) { ?> checked="true" <?php } ?> name="cal" value="1" /><?php echo _AT('key_calendars'); ?><br />
                 <input type="checkbox" <?php if($you) { ?> checked="true" <?php } ?> name="you" value="1" /><?php echo _AT('key_youtube'); ?><br /><br />                
@@ -43,16 +45,16 @@ require (AT_INCLUDE_PATH.'header.inc.php');
                 
 		<dl>
 		    <dt><label for="client_id"><?php echo _AT('key_client_id'); ?>&nbsp;</label></dt>
-		    <dd><input type="text" name="client_id" id="client_id" 
-		      value="<?php echo $row['client_id'] ?>" size="160" /></dd>
+		    <dd><input type="text" name="client_id" id="client_id" size="160"
+			   value="<?php echo $row['client_id']; ?>" /></dd>
 
 		    <dt><label for="client_secret"><?php echo _AT('key_client_secret'); ?>&nbsp;</label></dt>
-		    <dd><input type="text" name="client_secret" id="client_secret"
-		      value="<?php echo $row['client_secret'] ?>" size="160" /></dd>
+		    <dd><input type="text" name="client_secret" id="client_secret" size="160"
+			   value="<?php echo $row['client_secret']; ?>"/></dd>
 
 		    <dt><label for="redirect_uri"><?php echo _AT('key_redirect_uri'); ?>&nbsp;</label></dt>
-		    <dd><input type="text" name="redirect_uri" id="redirect_uri"
-		      value="<?php echo $row['redirect_uri'] ?>" size="160" /></dd>	    
+		    <dd><input type="text" name="redirect_uri" id="redirect_uri" size="160" 
+			   value="<?php echo $row['redirect_uri']; ?>"/></dd>	    
 		</dl>
 		<div class="row buttons"><input type="submit" value="<?php echo _AT('save_settings'); ?>" /></div>                 
             </form>

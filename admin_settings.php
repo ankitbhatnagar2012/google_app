@@ -6,31 +6,12 @@ define('AT_INCLUDE_PATH', '../../include/');
 require (AT_INCLUDE_PATH.'vitals.inc.php');
 admin_authenticate(AT_ADMIN_PRIV_GOOGLE_APP);
 $_custom_css = $_base_path . 'mods/google_app/module.css';
-require (AT_INCLUDE_PATH.'header.inc.php');
+require (AT_INCLUDE_PATH.'header.inc.php');    
 
     // check _POST vars
     $client_id = addslashes($_POST['client_id']);
     $client_secret = addslashes($_POST['client_secret']);
     $redirect_uri = addslashes($_POST['redirect_uri']);
-    $developer_key = addslashes($_POST['developer_key']);
-
-    // Calendar settings
-    $query = "DELETE FROM ".TABLE_PREFIX."calendar_settings WHERE idx=1";
-    $result = mysql_query($query, $db);
-    if(!$result){            
-            $success = FALSE;
-        }
-        else{
-            $success = TRUE; 
-        }
-    $query = "INSERT INTO ".TABLE_PREFIX."calendar_settings VALUES (1,'$client_id','$client_secret','$redirect_uri','$developer_key')";
-    $result = mysql_query($query, $db);
-    if(!$result){            
-            $success = FALSE;
-        }
-        else{
-            $success = TRUE; 
-        }
     
     // Module settings
     if(isset($_POST['doc'])){
@@ -77,6 +58,25 @@ require (AT_INCLUDE_PATH.'header.inc.php');
             $success = TRUE; 
         }
     }
+
+    // Calendar settings    
+    $query = "DELETE FROM ".TABLE_PREFIX."calendar_settings WHERE idx=1";
+    $result = mysql_query($query, $db);
+    if(!$result){            
+	$success = FALSE;
+	}
+	  else{
+	$success = TRUE; 
+	}
+    $query = "INSERT INTO ".TABLE_PREFIX."calendar_settings VALUES (1,'$client_id','$client_secret','$redirect_uri')";
+    $result = mysql_query($query, $db);
+    if(!$result){            
+	$success = FALSE;
+	}
+	  else{
+	$success = TRUE; 
+	}
+
     if($success){
 	  $msg->printFeedbacks('ADMIN_SETTINGS_SAVED_SUCCESSFULLY');
     } else {

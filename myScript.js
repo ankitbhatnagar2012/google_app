@@ -34,5 +34,18 @@ function onHintTextboxBlur() {
   }
 }
 
+function validateForm()
+{
+ // alert("I validated this"); return false;
+ var x=document.forms["service_check"]["client_id"].value;
+ var y=document.forms["service_check"]["client_secret"].value;
+ var z=document.forms["service_check"]["redirect_uri"].value;
+ if (x==null || x=="" || y==null || y=="" || z==null || z=="")
+   {
+   alert("Google API configurations missing. Please enter valid configurations. Refer to the README, for any further information");
+   return false;
+   }  
+}
+
 window.onload = initHintTextboxes;
  

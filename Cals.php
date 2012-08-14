@@ -19,8 +19,7 @@ $result = mysql_query($query, $db);
 $row = mysql_fetch_array($result);
 $href_string = "mods/google_app/calendar.vitals.inc.php?a=".$row['client_id'].
 		    "&b=".$row['client_secret'].
-		    "&c=".$row['redirect_uri'].
-		    "&d=".$row['developer_key'];
+		    "&c=".$row['redirect_uri'];
 ?>
 
 <!-- Navigation fieldset -->
@@ -52,7 +51,9 @@ $href_string = "mods/google_app/calendar.vitals.inc.php?a=".$row['client_id'].
 <div class="input-form">
 	<fieldset class="group_form">
             <legend class="group_form"><?php echo _AT('key_calendars'); ?></legend>
-            <center>                
+            <center>
+                <!-- <a href="<?php echo $href_string; ?>"><?php echo _AT('access_calendars'); ?></a><br /> -->
+
 		<a href="<?php echo $href_string; ?>" 
 		      onclick="ATutor.poptastic('<?php echo $href_string; ?>'); return false;" 
 			  target="_new"><?php echo _AT('access_calendars');?></a>
