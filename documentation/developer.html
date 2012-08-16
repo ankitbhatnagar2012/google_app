@@ -1,0 +1,253 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+
+<html>
+<head>
+	<title>Google App Module Developer Documentation</title>
+	<meta name="author" content="Ankit Bhatnagar" />
+	<meta name="description" content="Google App module developer documentation." />
+
+<style type="text/css">
+h1 {
+	background-color: #CCCCCC;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-bottom: 10px;
+	text-align: right;
+}
+
+h2 {
+	background-color: #DDDDDD;
+	padding-left: 10px;
+	margin-bottom: 0px;
+}
+h3 {
+	background-color: #EFEFEF;
+	padding-left: 20px;
+	margin-bottom: 0px;
+}
+h4  { margin-bottom: 0px; }
+p   { margin-top: 0px;    }
+dl  { margin-top: 0px;    }
+kbd { color: #761596;     }
+blockquote { font-style: italic; }
+pre.code {
+	background-color: #EEEEFF;
+	padding: 5px;
+	margin-left: 20px;
+	color:#761596;
+    margin-top: 0px;
+}
+.top {
+	float: right;
+	color: green;
+	padding-top: 2px;
+	padding-right: 5px;
+}
+
+@media print {
+	h2 {
+		page-break-after: avoid;
+		border-bottom: solid 1px black;
+	}
+	h3 {
+		page-break-after: avoid;
+		border-bottom: solid 1px black;
+		width: 75%;
+	}
+	.top {
+		display: none;
+	}
+
+	pre.code {
+		page-break-inside: avoid;
+	}
+}
+</style>
+</head>
+<body>
+<h1><a name="top"></a>Google App Module Developer Documentation</h1>
+
+<h2>Table of Contents</h2>
+
+<ul>
+	<li>1. <a href="#introduction">Introduction</a></li>
+	<li>2. <a href="#apis_used">APIs & Libraries Used</a></li>
+		<ul>
+			<li>2.1 <a href="https://developers.google.com/google-apps/documents-list/">Google Docs API Documentation</a></li>
+                        <li>2.2 <a href="https://developers.google.com/google-apps/calendar/">Google Calendars API Documentation</a></li>
+                        <li>2.3 <a href="https://developers.google.com/youtube/2.0/developers_guide_php">Youtube Data API Documentation</a></li>
+                        <li>2.4 <a href="http://framework.zend.com/">Zend GData PHP Library 1.11.11</a></li>
+                        <li>2.5 <a href="http://code.google.com/p/google-api-php-client/">Google API PHP Client Library 0.5.0</a></li>
+		</ul>	
+        <li>3. <a href="#setup">Code Checkout & Installation</a></li>       
+        <li>4. <a href="#communication">Communication</a></li>
+        <li>5. <a href="#proposed-features">Proposed Features</a></li>
+        <li>6. <a href="#bug-tracking">Bug Tracking</a></li>
+        <li>7. <a href="#directory-structure">Directory Structure</a>
+		<ul>
+			<li>7.1 <a href="#directories">Directories</a></li>
+			<li>7.2 <a href="#files">Files</a></li>
+		</ul>
+        </li>
+	<li>8. <a href="#database-structure">Database Structure</a></li>
+	<li>9. <a href="#localisation">Localisation</a></li>	
+        <li>10. <a href="#credits-sources">Credits &amp; Additional Sources</a></li>
+</ul>
+
+<!-- Introduction -->
+<a href="#top" class="top">top</a>
+<h2><a name="introduction"></a>1. Introduction</h2>
+    <p>Google App Module helps users & instructors to create & share interactive
+    course content using Google Apps & Data services from within ATutor. It primarily
+    intends to allow course content to be avaiable from user's Google accounts, rather
+    than having to upload the content to ATutor itself. This helps reduce the size of
+    course cartridges and thus, increase efficiency in content-development. It also 
+    promotes use of Google Apps such as documents, calendars etc & Youtube videos, etc
+    in creating more interactive course content.</p>
+	
+<!-- APIs used -->
+<a href="#top" class="top">top</a>
+<h2><a name="apis_used">2. Google APIs used</a></h2>
+	<p>The Google APIs that have been referred to in the Google App module are :</p>
+        <ul>
+            <li><a href="https://developers.google.com/google-apps/documents-list/">Google Docs API</a></li>
+            <li><a href="https://developers.google.com/google-apps/calendar/">Google Calendars API</a></li>
+            <li><a href="https://developers.google.com/youtube/2.0/developers_guide_php">Youtube Data API</a></li>
+        </ul>
+        <p>All the implementation was carried out, using the following libraries :</p>
+        <ul>
+            <li><a href="http://framework.zend.com/">Zend GData PHP Library 1.11.11</a></li>
+            <li><a href="http://code.google.com/p/google-api-php-client/">Google API PHP Client Library 0.5.0</a></li>
+        </ul>
+
+<!-- Code checkout & installation -->
+<a href="#top" class="top">top</a>
+<h2><a name="setup"></a>3. Code Checkout & Installation</h2>
+	<p>Latest module development can be checked-out from <a href="https://github.com/ankitbhatnagar2012/google_app">Github</a>.</p>
+        <p>After downloading the zipped source-code of the module, as directed in link above :</p>
+        <p>>>> Login into ATutor as admin.</p>
+        <p>>>> Go to Modules tab, located on the top pane.</p>
+        <p>>>> Click on Install Modules and upload the zipped module.</p>
+        <p>>>> Enable the module.</p>
+        <p>>>> Post installation, make sure to configure the module by clicking on the Google App tab on the top pane.</p>
+        <p>>>> Check required the services to enable them in the module. Also, configure
+        the Google API services credentials in the Calendar settings. For further information
+        read the <a href="../README">README</a></p>
+        <p>>>> Click on Save Settings.</p>        
+
+<!-- Communication -->
+<a href="#top" class="top">top</a>
+<h2><a name="communication"></a>4. Communication</h2>
+	<p>All communication between developers should occur in the <a href="http://atutor.ca/forum/12/1.html">Development Forum</a>. Please try to keep discussions public including any feature proposals.</p>
+
+<!-- Proposed Features -->
+<a href="#top" class="top">top</a>
+<h2><a name="proposed-features"></a>5. Proposed Features</h2>
+	<p>The <a href="http://atutor.ca/atutor/features.php" title="ATutor.ca - Proposed Features">Proposed Features</a> page lists features which have been requested by the ATutor community. ATutor.ca members can vote on features to establish a priority, while potential developers may then assign themselves to tasks. New feature requests should be posted to the <a href="http://atutor.ca/forum/2/1.html" title="ATutor.ca - Feature Requests Forum">ATutor Feature Requests</a> forum.</p>
+
+<!-- Bug tracking -->
+<a href="#top" class="top">top</a>
+<h2><a name="bug-tracking"></a>6. Bug Tracking</h2>
+	<p>Please report bugs to the <a href="http://atutor.ca/forum/3/1.html" title="ATutor.ca - Bug Forum">ATutor Bug Reports</a> forum, or directly to the <a href="http://www.atutor.ca/atutor/mantis">Mantis Bug Tracker</a>. Be sure to indicate the code version being used, such as a release candidate, stable release, nightly build, or SVN checkout, etc. Also be sure to describe the details of the system that ATutor or Google App module is being developed or tested on, such as the operating system, web server and version, PHP version, etc. Browse the <a href="http://www.atutor.ca/development/bugs/">Current Bug Summary</a> for a list of active bug fixing.</p>
+
+<!-- Directory Structure -->
+<a href="#top" class="top">top</a>
+<h2><a name="directory-structure"></a>7. Directory Structure</h2>
+	<p>The following is a short explanation of the important components of the Google App module directory structure.</p>
+
+	<h3><a name="directories"></a>7.1 Directories</h3>
+	<dl>
+		<dt><kbd>`google/`</kbd></dt>
+			<dd>This directory contains files used for implementing the Open-ID enabled, single sign-in login into the ATutor, using user's Google accounts.</dd>
+
+		<dt><kbd>`images/`</kbd></dt>
+			<dd>This directory contains images used by the module.</dd>
+
+		<dt><kbd>`Zend`</kbd></dt>
+			<dd>This directory contains the Zend library classes, for implementing Google API services.</dd>
+
+		<dt><kbd>`src`</kbd></dt>
+			<dd>This directory contains the Google Calendar API client library for PHP.</dd>
+        </dl>
+
+	<h3><a name="files"></a>7.2 Files</h3>
+	<p>The following is a description of some of the important files, of the Google App module. All the other files, not mentioned here are characteristic of all ATutor modules and can be checked out here.</p>
+	<dl>
+		<dt><kbd>`admin_settings.php`</kbd></dt>
+			<dd>This file is used for writing and fetching the administrator settings into module's database. It accesses User's data post from the admin panel, using index_admin.php</dd>
+
+		<dt><kbd>`calendar.php`</kbd></dt>
+			<dd>This file is the primary file used for implementing Google Calendar API services. It uses the Google Calendar API PHP client library.</dd>
+
+		<dt><kbd>`calendar.vitals.inc.php`</kbd></dt>
+			<dd>This file is used to store necessary Google Account credentials into a session. The $_SESSION variables can then be accessed throughout the scope of the module.</dd>
+
+		<dt><kbd>`Cals.php`</kbd></dt>
+			<dd>This file outputs the primary Google Calendar API features page.</dd>
+
+		<dt><kbd>`doc.php`</kbd></dt>
+			<dd>This file outputs the primary Google Docs API features page.</dd>
+
+		<dt><kbd>`Docs.php`</kbd></dt>
+			<dd>This file is the primary library file, used to implement Google Docs API features, using the Zend GData library.</dd>
+                        
+                <dt><kbd>`myScript.js`</kbd></dt>
+			<dd>This file contains the necessary Javascript functions used throughout the scope of the module.</dd>
+                        
+                <dt><kbd>`openid.vitals.inc.php`</kbd></dt>
+			<dd>This file is used to implement the OpenID enabled single sign-in into ATutor, using user's Google Account.</dd>
+                        
+                <dt><kbd>`operations.php`</kbd></dt>
+			<dd>This file is the primary library file that is used to implement necessary operations for the Youtube API features, using the Zend library.</dd>
+                        
+                <dt><kbd>`video_app.js`</kbd></dt>
+			<dd>This file contains the Javascript code, used in operations.php to implement the Youtube API features.</dd>
+                        
+                <dt><kbd>`you.php`</kbd></dt>
+			<dd>This file is the primary library file, used to implement Youtube API features, using the Zend GData library.</dd>
+                        
+                <dt><kbd>`you_index.php`</kbd></dt>
+			<dd>This file outputs the primary Youtube API features page.</dd>                
+	</dl>
+
+<!-- Database Structure -->
+<a href="#top" class="top">top</a>
+<h2><a name="database-structure"></a>8. Database Structure</h2>
+        <p>All the databases used by the Google App Module are as follows :</p>
+        <dl>
+                <dt><kbd>`google_app`</kbd></dt>
+			<dd>This table contains the basic user & course information.</dd>
+                        
+                <dt><kbd>`my_admin_settings`</kbd></dt>
+			<dd>This table contains the administrator settings for enabling/disabling Google API features throughout the scope of the module.</dd>
+ 
+                <dt><kbd>`calendar_settings`</kbd></dt>
+			<dd>This table contains the values for configuring the Google API services credentials, used for authenticating & authorising Google API requests.</dd> 
+        </dl>
+
+<!-- Localisation -->
+<a href="#top" class="top">top</a>
+<h2><a name="localisation"></a>9. Localisation</h2>
+	<p>All language terms and phrases are stored in the ATutor database. See the <a href="#fn-at"><kbd>_AT()</kbd></a> function for details on displaying text. There are three tables that are used for managing languages, their roles are as follows:
+		<dl>
+			<dt><kbd>`language_pages`</kbd></dt>
+			<dd>This table is used to cross reference language terms with pages. It allows selecting, via a <kbd>JOIN</kbd>, only the terms needed for a particular page. The <kbd>JOIN</kbd> may be slow at first but once the result is cached, subsequent calls are many times faster such that only the language needed for a particular page is restored from cache.</dd>
+
+			<dt><kbd>`language_text`</kbd></dt>
+			<dd>This table holds all of the text for an ATutor installation.</dd>
+
+			<dt><kbd>`languages`</kbd></dt>
+			<dd>This table holds the list of all available languages on the system and their attributes.</dd>
+
+		</dl></p>
+	
+<!-- Credits & Additional Sources -->
+<a href="#top" class="top">top</a>
+<h2><a name="credits-sources"></a>10. Credits &amp; Additional Sources</h2>
+	<ul>
+		<li><a href="http://atutor.ca">ATutor.ca</a></li>
+		<li><a href="http://atutor.ca/forum/12/1.html">ATutor Developer Support Forum</a></li>				
+	</ul>
+
+</body>
+</html>
