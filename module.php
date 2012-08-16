@@ -10,6 +10,9 @@ define('AT_PRIV_GOOGLE_APP',       $this->getPrivilege() );
 define('AT_ADMIN_PRIV_GOOGLE_APP', $this->getAdminPrivilege() );
 
 $this->_pages['mods/google_app/index.php']['text']      = _AT('google_app_text');
+$this->_pages['mods/google_app/index.php']['icon']      = 'mods/google_app/images/google_app_icon.jpeg';
+$this->_pages['mods/google_app/index.php']['img']       = 'mods/google_app/images/google_app_img.png';
+
 
 /*******
  * if this module is to be made available to students on the Home or Main Navigation.
@@ -40,7 +43,6 @@ $this->_pages['mods/google_app/index_instructor.php']['parent']   = 'tools/index
  */
 
 $this->_pages['mods/google_app/index.php']['title_var'] = 'google_app';
-$this->_pages['mods/google_app/index.php']['img']       = 'mods/google_app/google_app.jpg';
 
 /******* 
  * Public pages
