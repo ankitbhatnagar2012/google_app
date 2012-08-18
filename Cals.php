@@ -1,10 +1,24 @@
 <?php
+/* * ******************************************************************** */
+/* ATutor							          */
+/* * ******************************************************************** */
+/* Copyright (c) 2002-2012                                                */
+/* Inclusive Design Institute	                                          */
+/* http://atutor.ca                                                       */
+/*                                      			          */
+/* This program is free software. You can redistribute it and/or          */
+/* modify it under the terms of the GNU General Public License            */
+/* as published by the Free Software Foundation.                          */
+/* * ******************************************************************** */
+/* $$$ File_Id : Cals.php                            >>> Author:ankit $$$ */                       
+
 $_user_location = 'users';
 define('AT_INCLUDE_PATH', '../../include/');
 require (AT_INCLUDE_PATH.'vitals.inc.php');
 $_custom_css = $_base_path . 'mods/google_app/module.css';
 require (AT_INCLUDE_PATH.'header.inc.php');
-// fetching module configs 
+
+// fetching module configuration settings from the module database 
 $query = "SELECT * FROM ".TABLE_PREFIX."my_admin_settings";
 $result = mysql_query($query, $db);
 $row = mysql_fetch_array($result);
@@ -13,7 +27,7 @@ $bit = $my_string[0];
 $doc = $my_string[1];
 $cal = $my_string[2];
 $you = $my_string[3];
-// fetching calendar configs 
+// fetching calendar configuration settings from the module database 
 $query = "SELECT * FROM ".TABLE_PREFIX."calendar_settings";
 $result = mysql_query($query, $db);
 $row = mysql_fetch_array($result);
@@ -29,7 +43,7 @@ $href_string = "mods/google_app/calendar.vitals.inc.php?a=".$row['client_id'].
         <li><a href="mods/google_app/index_mystart.php"><?php echo _AT('key_home'); ?></a></li>
 <?php
         
-	// check if flags are set
+	// check if flags are set & output links
 	if($doc){
 ?>		
 		<li><a href="mods/google_app/doc.php"><?php echo _AT('key_docs'); ?></a></li>		
@@ -51,9 +65,7 @@ $href_string = "mods/google_app/calendar.vitals.inc.php?a=".$row['client_id'].
 <div class="input-form">
 	<fieldset class="group_form">
             <legend class="group_form"><?php echo _AT('key_calendars'); ?></legend>
-            <center>
-                <!-- <a href="<?php echo $href_string; ?>"><?php echo _AT('access_calendars'); ?></a><br /> -->
-
+            <center>                
 		<a href="<?php echo $href_string; ?>" 
 		      onclick="ATutor.poptastic('<?php echo $href_string; ?>'); return false;" 
 			  target="_new"><?php echo _AT('access_calendars');?></a>

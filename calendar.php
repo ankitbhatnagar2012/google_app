@@ -1,7 +1,18 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
+/* * ******************************************************************** */
+/* ATutor							          */
+/* * ******************************************************************** */
+/* Copyright (c) 2002-2012                                                */
+/* Inclusive Design Institute	                                          */
+/* http://atutor.ca                                                       */
+/*                                      			          */
+/* This program is free software. You can redistribute it and/or          */
+/* modify it under the terms of the GNU General Public License            */
+/* as published by the Free Software Foundation.                          */
+/* * ******************************************************************** */
+/* $$$ File_Id : calendar.php                        >>> Author:ankit $$$ */                       
 
+// check if a session already exists
 if(!isset($_SESSION['client_id'])) {
     session_start();
     }
@@ -35,7 +46,8 @@ if (isset($_SESSION['token'])) {
 
 if ($client->getAccessToken()) {
 ?>
-<!-- Form HTML here -->
+
+<!-- Output Form HTML here -->
 Enter details of the event : <br /><br />
 <form name="myForm" method="GET" action="calendar.php">
     <label for="title">Title : </label><input type="text" name="title" id="title" value="Title" class="hintTextbox" /> <br/>
@@ -60,7 +72,9 @@ Enter details of the event : <br /><br />
 
 <a href="#" onclick='window.close();'>Close this window</a>
 <!-- -->
+
 <?php
+  // executing Calendar API code here 
     if(isset($_GET['desc'])){
   $event = new Event();
   $event->setSummary($_GET['desc']);  
@@ -80,6 +94,7 @@ Enter details of the event : <br /><br />
   if(isset($createdEvent)){
     
 ?>
+    <!-- Output HTML here after Calendar event has been created -->
     <center>Google Calendar event created at :&nbsp;
     <a href="<?php echo $createdEvent["htmlLink"]; ?>"><?php echo $createdEvent["summary"]; ?></a><br /><br />
     To embed this Google Calendar event into your course, add the following link : <br />

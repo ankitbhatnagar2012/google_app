@@ -14,7 +14,6 @@
  *
  * @category   Zend
  * @package    Zend_Gdata
- * @subpackage Demos
  * @copyright  Copyright (c) 2005-2011 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
@@ -346,124 +345,7 @@ function startHTML($displayMenu = true)
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
     <title>Google Docs</title>
-<!--
-    <style type="text/css" media="screen">
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: small;
-        }
-
-        #header {
-            background-color: #9cF;
-            -moz-border-radius: 5px;
-            -webkit-border-radius: 5px;
-            padding-left: 5px;
-            height: 2.4em;
-        }
-
-        #header h1 {
-            width: 49%;
-            display: inline;
-            float: left;
-            margin: 0;
-            padding: 0;
-            font-size: 2em;
-        }
-
-        #header p {
-            width: 49%;
-            margin: 0;
-            padding-right: 15px;
-            float: right;
-            line-height: 2.4em;
-            text-align: right;
-        }
-
-        .clear {
-            clear:both;
-        }
-
-        h2 {
-            background-color: #ccc;
-            -moz-border-radius: 5px;
-            -webkit-border-radius: 5px;
-            margin-top: 1em;
-            padding-left: 5px;
-        }
-
-        .error {
-            color: red;
-        }
-
-        form {
-            width: 500px;
-            background: #ddf8cc;
-            border: 1px solid #80c605;
-            padding: 0 1em;
-            margin: 1em auto;
-        }
-
-        .warning {
-            width: 500px;
-            background: #F4B5B4;
-            border: 1px solid #900;
-            padding: 0 1em;
-            margin: 1em auto;
-        }
-
-        label {
-            display: block;
-            width: 130px;
-            float: left;
-            text-align: right;
-            padding-top: 0.3em;
-            padding-right: 3px;
-        }
-
-        .radio {
-            margin: 0;
-            padding-left: 130px;
-        }
-
-        #menuSelect {
-            padding: 0;
-        }
-
-        #menuSelect li {
-            display: block;
-            width: 500px;
-            background: #ddf8cc;
-            border: 1px solid #80c605;
-            margin: 1em auto;
-            padding: 0;
-            font-size: 1.3em;
-            text-align: center;
-            list-style-type: none;
-        }
-
-        #menuSelect li:hover {
-            background: #c4faa2;
-        }
-
-        #menuSelect a {
-            display: block;
-            height: 2em;
-            margin: 0px;
-            padding-top: 0.75em;
-            padding-bottom: -0.25em;
-            text-decoration: none;
-        }
-        #content {
-            width: 600px;
-            margin: 0 auto;
-            padding: 0;
-            text-align: left;
-        }
-    </style>
--->
-
 </head>
 
 <body>
@@ -622,7 +504,6 @@ function displayMenu()
     <ul id="menuSelect">
         <li><a class="menuSelect" href="./Docs.php?menu=list">List Documents</a></li>
         <li><a class="menuSelect" href="./Docs.php?menu=upload">Upload a new document</a></li>
-        <!-- <li><a class="menuSelect" href="./index_mystart.php">Go back</a></li> -->
         <li><a class="menuSelect" href="#" onclick='window.close();'>Close this window</a></li>
     </ul>
 
@@ -698,15 +579,9 @@ function runWWWVersion()
             switch ($_POST['command']) {
                 case 'uploadDocument':
                     startHTML();
-                    // testing variables
-                    //echo $_FILES['uploadedFile']['name'];
-                    //echo "....";
-                    //echo $_FILES['uploadedFile']['tmp_name'];
-                    ///////////////////////////
                     uploadDocument($docs, true,
                         $_FILES['uploadedFile']['name'],
                         $_FILES['uploadedFile']['tmp_name']);
-                    //////////////////////////  
                     endHTML(true);
                 case 'modifySubscription':
                     if ($_POST['mode'] == 'subscribe') {

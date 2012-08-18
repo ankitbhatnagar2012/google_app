@@ -1,10 +1,24 @@
 <?php
+/* * ******************************************************************** */
+/* ATutor							          */
+/* * ******************************************************************** */
+/* Copyright (c) 2002-2012                                                */
+/* Inclusive Design Institute	                                          */
+/* http://atutor.ca                                                       */
+/*                                      			          */
+/* This program is free software. You can redistribute it and/or          */
+/* modify it under the terms of the GNU General Public License            */
+/* as published by the Free Software Foundation.                          */
+/* * ******************************************************************** */
+/* $$$ File_Id : doc.php                             >>> Author:ankit $$$ */                       
+
 $_user_location = 'users';
 define('AT_INCLUDE_PATH', '../../include/');
 require (AT_INCLUDE_PATH.'vitals.inc.php');
 $_custom_css = $_base_path . 'mods/google_app/module.css'; // use a custom stylesheet
 require (AT_INCLUDE_PATH.'header.inc.php');
-// database handling 
+
+// fetching module configuration settings from the module database 
 $query = "SELECT * FROM ".TABLE_PREFIX."my_admin_settings";
 $result = mysql_query($query, $db);
 $row = mysql_fetch_array($result);
@@ -22,6 +36,7 @@ $you = $my_string[3];
         <li><a href="mods/google_app/index_mystart.php"><?php echo _AT('key_home'); ?></a></li>        		
 	<li class="active"><?php echo _AT('key_docs'); ?></li>		
 <?php
+	// check if flags are set and enable links
 	if($cal){
 ?>		
 		<li><a href="mods/google_app/Cals.php"><?php echo _AT('key_calendars'); ?></a></li>		
@@ -47,7 +62,6 @@ $you = $my_string[3];
             </center>
 	</fieldset>	
 </div>
-
 
 <?php 
 require (AT_INCLUDE_PATH.'footer.inc.php'); 

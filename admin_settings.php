@@ -1,6 +1,16 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
+/* * ******************************************************************** */
+/* ATutor							          */
+/* * ******************************************************************** */
+/* Copyright (c) 2002-2012                                                */
+/* Inclusive Design Institute	                                          */
+/* http://atutor.ca                                                       */
+/*                                      			          */
+/* This program is free software. You can redistribute it and/or          */
+/* modify it under the terms of the GNU General Public License            */
+/* as published by the Free Software Foundation.                          */
+/* * ******************************************************************** */
+/* $$$ File_Id : admin_settings.php                  >>> Author:ankit $$$ */                       
 
 define('AT_INCLUDE_PATH', '../../include/');
 require (AT_INCLUDE_PATH.'vitals.inc.php');
@@ -8,7 +18,8 @@ admin_authenticate(AT_ADMIN_PRIV_GOOGLE_APP);
 $_custom_css = $_base_path . 'mods/google_app/module.css';
 require (AT_INCLUDE_PATH.'header.inc.php');    
 
-    // check _POST vars
+    // fetch value of $_POST variables. Remember to flush through PHP function addslashes()
+    // to eliminate any SQL injections.
     $client_id = addslashes($_POST['client_id']);
     $client_secret = addslashes($_POST['client_secret']);
     $redirect_uri = addslashes($_POST['redirect_uri']);
