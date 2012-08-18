@@ -13,8 +13,7 @@ Administrator Settings Panel :
 	When you install the Google App module into your ATutor installation, you need to configure the module
 according to your environment. To do this :
 
-(1) Check all the desired services that you want to enable in the module, viz Google Docs, Google Calendars & Youtube. By
-default, all the services are enabled.
+(1) Check all the desired services that you want to enable in the module, viz Google Docs, Google Calendars & Youtube.
 
 (2) Register for a Google API Console account by visiting the following link - https://code.google.com/apis/console
 You may use your existing Google Account to sign-in into Google API console. At the link :-
