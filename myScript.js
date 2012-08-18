@@ -1,3 +1,16 @@
+/* * ******************************************************************** */
+/* ATutor							          */
+/* * ******************************************************************** */
+/* Copyright (c) 2002-2012                                                */
+/* Inclusive Design Institute	                                          */
+/* http://atutor.ca                                                       */
+/*                                      			          */
+/* This program is free software. You can redistribute it and/or          */
+/* modify it under the terms of the GNU General Public License            */
+/* as published by the Free Software Foundation.                          */
+/* * ******************************************************************** */
+/* $$$ File_Id : myScipt.js                          >>> Author:ankit $$$ */                       
+
 var HintClass = "hintTextbox";
 var HintActiveClass = "hintTextboxActive";
 String.prototype.trim = function() { return this.replace(/^\s+|\s+$/g, ''); };
@@ -36,7 +49,6 @@ function onHintTextboxBlur() {
 
 function validateForm()
 {
- // alert("I validated this"); return false;
  var x=document.forms["service_check"]["client_id"].value;
  var y=document.forms["service_check"]["client_secret"].value;
  var z=document.forms["service_check"]["redirect_uri"].value;

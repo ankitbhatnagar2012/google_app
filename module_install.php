@@ -1,4 +1,17 @@
 <?php
+/* * ******************************************************************** */
+/* ATutor							          */
+/* * ******************************************************************** */
+/* Copyright (c) 2002-2012                                                */
+/* Inclusive Design Institute	                                          */
+/* http://atutor.ca                                                       */
+/*                                      			          */
+/* This program is free software. You can redistribute it and/or          */
+/* modify it under the terms of the GNU General Public License            */
+/* as published by the Free Software Foundation.                          */
+/* * ******************************************************************** */
+/* $$$ File_Id : module_install.php                  >>> Author:ankit $$$ */                       
+
 /*******
  * the line below safe-guards this file from being accessed directly from
  * a web browser. It will only execute if required from within an ATutor script,
@@ -28,15 +41,19 @@ if (!defined('AT_INCLUDE_PATH')) { exit; }
  *    if non-zero specifies in minutes how often the module's cron job should be run.
  *    set to 0 or not set to disable.
  */
+
 $_course_privilege = TRUE; // possible values: FALSE | AT_PRIV_ADMIN | TRUE
 $_admin_privilege  = TRUE; // possible values: FALSE | TRUE
-// $_cron_interval    = 35; // run every 30 minutes
 
+// set a value for $_cron_interval to set up a cron-job for the module. The value
+// set is equal to the time after which the cron-code executes.
+// $_cron_interval = 35;
 
 /********
  * the following code is used for creating a module-specific directory.
  * it generates appropriate error messages to aid in its creation.
  */
+
 $directory = AT_CONTENT_DIR .'google_app';
 // check if the directory is writeable
 if (!is_dir($directory) && !@mkdir($directory)) {
@@ -54,10 +71,6 @@ if (!$msg->containsErrors() && file_exists(dirname(__FILE__) . '/module.sql')) {
 	// deal with the SQL file:
 	require(AT_INCLUDE_PATH . 'classes/sqlutility.class.php');
 	$sqlUtility = new SqlUtility();
-	/*
-	 * the SQL file could be stored anywhere, and named anything, "module.sql" is simply
-	 * a convention we're using.
-	 */
 	$sqlUtility->queryFromFile(dirname(__FILE__) . '/module.sql', TABLE_PREFIX);
 }
 ?>

@@ -1,4 +1,17 @@
 <?php
+/* * ******************************************************************** */
+/* ATutor							          */
+/* * ******************************************************************** */
+/* Copyright (c) 2002-2012                                                */
+/* Inclusive Design Institute	                                          */
+/* http://atutor.ca                                                       */
+/*                                      			          */
+/* This program is free software. You can redistribute it and/or          */
+/* modify it under the terms of the GNU General Public License            */
+/* as published by the Free Software Foundation.                          */
+/* * ******************************************************************** */
+/* $$$ File_Id : module_delete.php                   >>> Author:ankit $$$ */                       
+
 /*******
  * this function named [module_name]_delete is called whenever a course content is deleted
  * which includes when restoring a backup with override set, or when deleting an entire course.

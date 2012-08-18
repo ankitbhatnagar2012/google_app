@@ -1,3 +1,21 @@
+/* * ******************************************************************** */
+/* ATutor							          */
+/* * ******************************************************************** */
+/* Copyright (c) 2002-2012                                                */
+/* Inclusive Design Institute	                                          */
+/* http://atutor.ca                                                       */
+/*                                      			          */
+/* This program is free software. You can redistribute it and/or          */
+/* modify it under the terms of the GNU General Public License            */
+/* as published by the Free Software Foundation.                          */
+/* * ******************************************************************** */
+/* $$$ File_Id : module.css                          >>> Author:ankit $$$ */                       
+
+/*
+ * This file contains all the CSS styling that needs to be done throughout
+ * the scope of the module.
+ */
+
 div#google_app {
 	border: 1px solid #ccc;
 	padding: 10px;
